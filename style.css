@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Raleway';
+}
+
+:root {
+/*## Colors*/
+
+/*### Primary*/
+
+--gradient: hsl(6, 100%, 80%) ,hsl(335, 100%, 65%);
+
+/*### Neutral*/
+
+--paleBlue: hsl(243, 100%, 93%);
+--grayishBlue: hsl(229, 7%, 55%);
+--darkBlue: hsl(228, 56%, 26%);
+--veryDarkBlue: hsl(229, 57%, 11%);
+}
+
+body {
+    max-width: 1440px;
+    background-color: var(--veryDarkBlue);
+    min-height: 100vh;
+    background-image: url('images/bg-desktop.png');
+    background-repeat: no-repeat;
+    background-position: bottom, bottom;
+    background-size: auto;
+    background-position-y: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+aside {
+    width: 350px;
+    background-color: var(--darkBlue);
+    margin: 25px 15px 0 11px;
+    padding: 36px 50px 40px 40px;
+    border-radius: 8px;
+    border-top-right-radius: 100px;
+}
+
+aside .icons {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+aside .icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 15px;
+    background-color: var(--veryDarkBlue);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 540px;
+    height: 100%;
+    background-color: var(--darkBlue);
+    color: var(--paleBlue);
+    margin-left: 15px;
+    margin-top: 70px;
+    padding: 20px 43px 40px;
+    border-radius: 10px;
+}
+
+section h2 {
+    font-weight: 400;
+    margin-top: -50px;
+    margin-bottom: 15px;
+}
+
+section .meter-bar {
+    width: 100%;
+    height: 17px;
+    background-color: var(--veryDarkBlue);
+    border-radius: 25px;
+    padding: 2px;
+    margin: 5px 0;
+}
+
+section .meter-bar .bar {
+    width: 81.5%;
+    height: 100%;
+    background: linear-gradient(to right, var(--gradient));
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1px;
+}
+
+section .meter-bar .bar-point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--paleBlue);
+}
+
+.bar-btm {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.bar-btm span {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.balloon {
+    width: 180px;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    position: relative;
+    top: -65px;
+    right: -280px;
+}
+
+.balloon h1 {
+    font-size: 40px;
+    color: black;
+    margin-left: 15px;
+}
+
+.balloon span {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--grayishBlue);
+}
+
+.balloon::after{
+    content:'';
+    position: relative;
+    border: 13px solid white;
+    border-color: white white transparent transparent;
+    top: 45px;
+    right: -9px;
+}
+
+@media (max-width: 1000px) {
+    body {
+        background-image: url('images/bg-mobile.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        padding-bottom: 130px;
+    }
+
+    main {
+        flex-direction: column;        
+    }
+
+    aside {
+        margin-top: 130px;
+        width: 300px;
+        padding-left: 40px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    section {
+        width: 300px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 50px;
+        padding: 10px 35px 60px;
+    }
+
+    .balloon {
+        top: 120px;
+        right: -25px;
+        border-radius: 10px;
+    }
+
+    .balloon:after {
+        border: 0;
+    }
+
+}
